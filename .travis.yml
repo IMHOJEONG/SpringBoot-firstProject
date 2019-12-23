@@ -31,10 +31,10 @@ deploy:
 
     bucket: springboot-webservice
     region: ap-northeast-2
-    skip_cleanup: true
+    cleanup: true
     acl: private
     local_dir: deploy
-    wait-until-deployed: true
+    wait_until_deployed: true
 
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
@@ -48,7 +48,7 @@ deploy:
     deployment_group: springboot-webservice-group
 
     region: ap-northeast-2
-    wait-until-deployed: true
+    wait_until_deployed: true
 
 # CI 실행 완료 시 메일로 알람
 notifications:
