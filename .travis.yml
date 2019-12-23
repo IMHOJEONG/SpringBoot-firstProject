@@ -1,5 +1,7 @@
 language: java
 
+os: linux
+
 before_install:
   - chmod +x gradlew
 
@@ -34,7 +36,7 @@ deploy:
     skip_cleanup: true
     acl: private
     local_dir: deploy
-    wait_until_deployed: true
+    wait-until-deployed: true
 
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
