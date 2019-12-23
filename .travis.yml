@@ -10,6 +10,7 @@ branches:
   only:
     - master
 
+install: travis_wait mvn install
 # Travis CI 서버의 Home
 cache:
   directories:
