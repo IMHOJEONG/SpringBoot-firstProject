@@ -33,7 +33,7 @@ deploy:
 
     bucket: springboot-webservice
     region: ap-northeast-2
-    skip_cleanup: true
+    cleanup: true
     acl: private
     local_dir: deploy
     wait-until-deployed: true
