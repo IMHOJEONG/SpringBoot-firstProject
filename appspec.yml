@@ -3,4 +3,6 @@ os: linux
 files:
   - source: /
     destination: /home/ec2-user/app/step2/zip/
-    overwrite: true
+    overwrite: true # yes가 아닌가?? 일단 파일 내부를 삭제 후 다시 기동하니 배포 완료
+
+
