@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/app/step2/zip/
+    destination: /home/ec2-user/app/step3/zip/
     overwrite: true #yes가 아닌가?? 일단 파일 내부를 삭제 후 다시 기동하니 배포 완료
 
 permissions:
@@ -12,8 +12,16 @@ permissions:
     group: ec2-user
 
 hooks:
+  AfterInstall:
+    - location: stop.sh
+      timeout: 60
+      runas: ec2-user
   ApplicationStart:
-    - location: deploy.sh
+    - location: start.sh
+      timeout: 60
+      runas: ec2-user
+  ValidateService:
+    - location: health.sh
       timeout: 60
       runas: ec2-user
 
